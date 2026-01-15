@@ -1,29 +1,31 @@
 {
-  "name": "clipnest",
-  "version": "1.0.0",
-  "main": "dist/index.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/seekernothing/Clipnest.git"
-  },
-  "keywords": [],
-  "author": "Abhishek Biradar",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/seekernothing/Clipnest/issues"
-  },
-  "homepage": "https://github.com/seekernothing/Clipnest#readme",
-  "description": "",
-  "devDependencies": {
-    "@types/express": "^5.0.6",
-    "@types/node": "^25.0.9",
-    "typescript": "^5.9.3"
-  },
-  "dependencies": {
-    "express": "^5.2.1"
-  }
+    "name": "clipnest",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format:fix": "prettier . --write"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/seekernothing/Clipnest.git"
+    },
+    "keywords": [],
+    "author": "Abhishek Biradar",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/seekernothing/Clipnest/issues"
+    },
+    "homepage": "https://github.com/seekernothing/Clipnest#readme",
+    "description": "",
+    "devDependencies": {
+        "@types/express": "^5.0.6",
+        "@types/node": "^25.0.9",
+        "prettier": "3.8.0",
+        "typescript": "^5.9.3"
+    },
+    "dependencies": {
+        "express": "^5.2.1"
+    }
 }
