@@ -26,10 +26,10 @@ app.get("/api/v1/brain/:shareLink", (req, res) => {});
 
 connectDB()
     .then(() => {
-        console.log("Database connection successful");
         app.listen(PORT, () => {
             console.log(`Server is running on the port ${PORT}`);
         });
+        console.log("Database connection successful");
     })
     .catch((err) => {
         console.log(`Database connection failed due to ${err}`);
