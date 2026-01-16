@@ -1,36 +1,27 @@
 import "dotenv/config";
 import express from "express";
-import jsonwebtoken from "jsonwebtoken";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+
+import routes from "./routes/index.js";
 import connectDB from "./config/database.js";
 
 const app = express();
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT || 8000;
 
+app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 
-app.post("/api/v1/signup", (req, res) => {});
+//  SINGLE LINE THAT MATTERS
 
-app.post("/api/v1/signin", (req, res) => {});
-
-app.post("/api/v1/content", (req, res) => {});
-
-app.get("/api/v1/content", (req, res) => {});
-
-app.delete("/api/v1/content", (req, res) => {});
-
-app.post("/api/v1/brain/share", (req, res) => {});
-
-app.get("/api/v1/brain/:shareLink", (req, res) => {});
-
-// strting the server
+app.use("/api/v1", routes);
 
 connectDB()
     .then(() => {
+        console.log("DB connected");
         app.listen(PORT, () => {
-            console.log(`Server is running on the port ${PORT}`);
+            console.log(`Server running on ${PORT}`);
         });
-        console.log("Database connection successful");
     })
-    .catch((err) => {
-        console.log(`Database connection failed due to ${err}`);
-    });
+    .catch(console.error);
