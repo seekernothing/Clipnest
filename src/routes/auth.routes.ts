@@ -66,13 +66,17 @@ router.post("/signin", async (req, res) => {
         // 2️⃣ Find user by username (password needed)
         const user = await User.findOne({ username }).select("+password");
         if (!user) {
-            return res.status(403).json({ message: "Invalid credentials" });
+            return res
+                .status(403)
+                .json({ message: "Invalid login credentials" });
         }
 
         // 3️⃣ Compare password
         const isValid = await bcrypt.compare(password, user.password);
         if (!isValid) {
-            return res.status(403).json({ message: "Invalid credentials" });
+            return res
+                .status(403)
+                .json({ message: "Invalid login credentials" });
         }
 
         // 4️⃣ Create JWT
@@ -96,7 +100,7 @@ router.post("/signin", async (req, res) => {
 
 /* ================= LOGOUT ================= */
 // POST /api/v1/logout
-router.post("/logout", (_req, res) => {
+router.post("/logout", (req, res) => {
     res.cookie("token", "", {
         httpOnly: true,
         sameSite: "lax",
