@@ -55,7 +55,7 @@ const contentSchema = new Schema<IContent>(
 contentSchema.index({ userId: 1, createdAt: -1 });
 
 // Fast: filter by tags
-contentSchema.index({ tags: 1 });
+// contentSchema.index({ tags: 1 });//
 
 const Content = mongoose.model<IContent>("Content", contentSchema);
 export default Content;
