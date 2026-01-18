@@ -4,7 +4,6 @@ import { userAuth } from "../middlewares/middleware.js";
 
 const router = Router();
 
-
 /*
 POST /api/v1/content
 Body:
@@ -37,7 +36,6 @@ router.post("/", userAuth, async (req, res) => {
     }
 });
 
-
 /*
 GET /api/v1/content
 */
@@ -56,7 +54,6 @@ router.get("/", userAuth, async (req, res) => {
         });
     }
 });
-
 
 /*
 DELETE /api/v1/content
