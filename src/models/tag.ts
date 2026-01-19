@@ -21,8 +21,7 @@ const tagSchema = new Schema<ITag>(
     },
 );
 
-// ❌ REMOVE THIS LINE
-// tagSchema.index({ title: 1 });
+
 
 const Tag = mongoose.model<ITag>("Tag", tagSchema);
 export default Tag;
