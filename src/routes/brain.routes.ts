@@ -8,7 +8,6 @@ import { userAuth } from "../middlewares/middleware.js";
 
 const router = Router();
 
-
 /*
 POST /api/v1/brain/share
 Body:
@@ -56,7 +55,6 @@ router.post("/share", userAuth, async (req, res) => {
         });
     }
 });
-
 
 /*
 GET /api/v1/brain/:shareLink
